@@ -28,6 +28,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+        </dependency>
 
         <dependency>
             <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
@@ -50,7 +58,7 @@
     </dependencies>
 
     <build>
-<!--        <finalName>analyzer-service</finalName>-->
+<!--        <finalName>medical-monitoring</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -58,9 +66,9 @@
                 <version>${spring.boot.version}</version>
                 <executions>
                     <execution>
-                        <id>build-info</id>
+                        <id>repackage</id>
                         <goals>
-                            <goal>build-info</goal>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>

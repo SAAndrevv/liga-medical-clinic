@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/work_pc?currentSchema=clinic
+    username: postgres
+    password: root
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    host: "rabbit"
+    port: 5672
+
+rabbit:
+  queue:
+    common-monitoring-queue: "common_monitoring"
+    daily-queue: "daily_queue"
+    alert-queue: "alert_queue"
+    error-queue: "error_queue"
