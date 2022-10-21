@@ -13,7 +13,11 @@ spring:
       ddl-auto: update
 
   rabbitmq:
+<<<<<<< HEAD
     host: "rabbit"
+=======
+    host: "localhost"
+>>>>>>> Lesson4
     port: 5672
 
 rabbit:
