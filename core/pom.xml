@@ -54,7 +54,7 @@
     </dependencies>
 
     <build>
-<!--        <finalName>medical-monitoring</finalName>-->
+        <finalName>medical-monitoring-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
