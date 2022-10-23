@@ -6,12 +6,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @EnableRabbit
-@Component
-public class RabbitListenerServiceImpl implements RabbitListenerService{
+@Service
+public class RabbitListenerServiceImpl implements RabbitListenerService {
 
     @NonNull
     private AmqpTemplate template;
