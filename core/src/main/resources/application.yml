@@ -3,17 +3,28 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/work_pc?currentSchema=clinic
-    username: postgres
-    password: root
-
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
 
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL82Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+    sql:
+      init:
+        mode: always
+
+  application:
+    name: message-monitoring
+
+  zipkin:
+    enabled: ${ZIPKIN_MODE:false}
 
   rabbitmq:
-    host: "rabbit"
+    host: "localhost"
     port: 5672
 
 rabbit:

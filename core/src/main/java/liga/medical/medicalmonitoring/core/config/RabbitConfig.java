@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.config;
 
-import liga.medical.medicalmonitoring.dto.rabbit.RabbitType;
+import liga.medical.commonmodule.dto.enums.RabbitMessageType;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
@@ -96,15 +96,15 @@ public class RabbitConfig {
 
     @Bean
     public Binding bindingDailyQueue() {
-        return BindingBuilder.bind(dailyQueue()).to(directExchange()).with(RabbitType.DAILY.getType());
+        return BindingBuilder.bind(dailyQueue()).to(directExchange()).with(RabbitMessageType.DAILY.getType());
     }
 
     @Bean Binding bindingAlertQueue() {
-        return BindingBuilder.bind(alertQueue()).to(directExchange()).with(RabbitType.ALERT.getType());
+        return BindingBuilder.bind(alertQueue()).to(directExchange()).with(RabbitMessageType.ALERT.getType());
     }
 
     @Bean Binding bindingErrorQueue() {
-        return BindingBuilder.bind(errorQueue()).to(directExchange()).with(RabbitType.ERROR.getType());
+        return BindingBuilder.bind(errorQueue()).to(directExchange()).with(RabbitMessageType.ERROR.getType());
     }
 
 }

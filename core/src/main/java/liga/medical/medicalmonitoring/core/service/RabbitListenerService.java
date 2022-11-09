@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.service;
 
-import liga.medical.medicalmonitoring.dto.rabbit.RabbitMessageDto;
+import liga.medical.commonmodule.dto.rabbit.RabbitMessageDto;
 
 public interface RabbitListenerService {
 

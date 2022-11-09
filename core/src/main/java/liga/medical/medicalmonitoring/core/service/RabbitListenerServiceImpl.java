@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.service;
 
-import liga.medical.medicalmonitoring.dto.rabbit.RabbitMessageDto;
+import liga.medical.commonmodule.dto.rabbit.RabbitMessageDto;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.AmqpTemplate;
