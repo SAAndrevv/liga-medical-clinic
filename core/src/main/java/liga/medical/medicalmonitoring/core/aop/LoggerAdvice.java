@@ -41,7 +41,7 @@ public class LoggerAdvice {
 
         LogDto logDto = new LogDto(
                 getTraceId(),
-                SystemType.MEDICAL_MONITORING.name(),
+                SystemType.MEDICAL_MONITORING,
                 String.format("%s.%s(%s)",
                         className,
                         method,
@@ -70,7 +70,7 @@ public class LoggerAdvice {
             log.debug(afterLog);
         }
 
-        if (RabbitMessageType.valueOf(messageDto.getType()) == RabbitMessageType.ERROR) {
+        if (RabbitMessageType.valueOf(messageDto.getType().toUpperCase()) == RabbitMessageType.ERROR) {
             loggerService.saveExceptionLog(logDto);
         } else {
             loggerService.saveDebugLog(logDto);

@@ -1,6 +1,7 @@
 package liga.medical.medicalmonitoring.core.service;
 
 import liga.medical.commonmodule.dto.rabbit.RabbitMessageDto;
+import liga.medical.commonmodule.service.annotation.DBLog;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -18,6 +19,7 @@ public class RabbitListenerServiceImpl implements RabbitListenerService {
 
     @Override
     @RabbitListener(queues = "common_monitoring")
+    @DBLog
     public void processCommonMonitoringQueue(RabbitMessageDto message) {
         System.out.println("Get message: " + message);
         template.convertAndSend(message.getType(), message);
